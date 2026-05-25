@@ -16,6 +16,26 @@ jobs:
 
     steps:
 
+      - name: Validate SSH configuration
+        run: |
+
+          if [ -z "${{ secrets.EC2_HOST }}" ]; then
+            echo "ERROR: EC2_HOST secret missing"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.EC2_USER }}" ]; then
+            echo "ERROR: EC2_USER secret missing"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.EC2_SSH_KEY }}" ]; then
+            echo "ERROR: EC2_SSH_KEY secret missing"
+            exit 1
+          fi
+
+          echo "SSH configuration looks good"
+
       - name: Deploy to Azure VM
 
         uses: appleboy/ssh-action@v1.2.0
@@ -38,6 +58,11 @@ jobs:
             cd ~/github-actions-kubernetes-masterclass
 
             git pull origin main
+
+            if [ ! -f .env ]; then
+              echo ".env file missing"
+              exit 1
+            fi
 
             source .env
 
