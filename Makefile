@@ -1,7 +1,7 @@
 CLUSTER  ?= skillpulse
 NAMESPACE ?= skillpulse
-BACKEND_IMAGE  ?= trainwithshubham/skillpulse-backend:latest
-FRONTEND_IMAGE ?= trainwithshubham/skillpulse-frontend:latest
+BACKEND_IMAGE  ?= abhishek8773/skillpulse-backend:latest
+FRONTEND_IMAGE ?= abhishek8773/skillpulse-frontend:latest
 
 .PHONY: up down build load apply status logs mysql restart
 
