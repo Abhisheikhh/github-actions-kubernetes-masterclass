@@ -32,7 +32,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - name: frontend
+        - name: frontend 
           image: abhishek8773/skillpulse-frontend:2408b378df70d771234ab7a98720fc99212f1868
           imagePullPolicy: IfNotPresent
           ports:
