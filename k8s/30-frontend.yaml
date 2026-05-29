@@ -46,7 +46,7 @@ spec:
 
         - name: frontend
 
-          image: abhishek8773/skillpulse-frontend:6042e48b8adc065abda602856414c73fe7de2547
+          image: abhishek8773/skillpulse-frontend:d82061cc4f97852f5727da18598249350248356d
 
           imagePullPolicy: IfNotPresent
 
