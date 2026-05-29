@@ -1,4 +1,4 @@
-module github.com/Abbhisheikhh/skillpulse
+module github.com/Abhisheikhh/skillpulse
 
 go 1.26
 
